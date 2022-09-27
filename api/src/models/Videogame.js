@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
     image:{
       type:DataTypes.STRING,
       allowNull: true,
-      defoult:'https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg',
+      default:'https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg',
     },
     rating: {
       type:DataTypes.FLOAT,
@@ -29,6 +29,9 @@ module.exports = (sequelize) => {
     genres:{
     },
     released:{
+      type: DataTypes.DATEONLY,
+      allowNull:true,
+      defaultValue: DataTypes.NOW,
     },
     //short_screenshots:{}
     //tags:{}
