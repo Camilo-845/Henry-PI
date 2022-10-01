@@ -10,12 +10,12 @@ describe('Videogame model', () => {
     beforeEach(() => Videogame.sync({ force: true }));
     describe('name', () => {
       it('should throw an error if name is null', (done) => {
-        Videogame.create({})
-          .then(() => done(new Error('It requires a valid name')))
+        Videogame.create({description:"hola hola"})
+          .then(() => console.log('hola prro')/* done(new Error('It requires a valid name') */)
           .catch(() => done());
       });
       it('should work when its a valid name', () => {
-        Recipe.create({ name: 'Super Mario Bros' });
+        Videogame.create({ name: 'Super Mario Bros' });
       });
     });
   });
