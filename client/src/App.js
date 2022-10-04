@@ -1,9 +1,14 @@
-import './App.css';
+import React from "react";
+import {Route}from 'react-router-dom';
+import{Welcome,Home,VdeogameDetail,VideogameCreate} from "./components";
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Videogames</h1>
+      <Route path='/' component={Welcome}/>
+      <Route path='/videogame' component={Home}/>
+      <Route path='/videogame/:idVideogame' component={VdeogameDetail}/>
+      <Route path='/videogame/create' component={VideogameCreate}/>
     </div>
   );
 }
