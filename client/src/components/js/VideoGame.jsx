@@ -7,6 +7,9 @@ const VideoGame = (props) => {
   var query_param = ""
   if (props.belongs_db) {
     query_param = "?belongs_db=true"}
+    else{
+    query_param = "?belongs_db=false"
+  }
   return (
     <Link style={{ textDecoration: 'none' }} to={`/videogame/${props.id}${query_param}`}>
       <div className={styles.main_container}>

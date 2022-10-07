@@ -17,7 +17,7 @@ export const getVideogames = () => {
 };
 export const getVideogameById = (IdVideogame,belongsDb) => {
     var DbParams="";
-    if(belongsDb)DbParams+="?belongs_db=true"
+    if(belongsDb)DbParams+=`?belongs_db=${belongsDb}`
     return function(dispatch){
         return fetch(`${BACKEND_URL}videogame/${IdVideogame}${DbParams}`)
         .then(response=>response.json())
