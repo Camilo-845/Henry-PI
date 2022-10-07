@@ -1,0 +1,43 @@
+.contendor{
+    margin: auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    width: 70%;
+    height: auto;
+}
+.contendor h1{
+    width: 250px;
+}
+.searchBar{
+    margin-top: 5px;
+    width: 70%;
+    border-radius: 12px;
+    border:solid 1px white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.searchBar button{
+    border-radius: 12px;
+    font-size: 25px;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+}
+.gamesContainer{
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    width: 90%;
+    margin-top: 10px;
+    border:3px solid black;
+    background-color: rgb(21, 21, 21);
+}

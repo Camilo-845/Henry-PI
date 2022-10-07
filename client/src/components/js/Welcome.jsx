@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Welcome = () => {
   return (
     <div className={styles.main_container}>
-      <img height="auto" src={require("../../scr_img/videogame.png").default} alt="hola"/>
+      <img  src={require("../../scr_img/videogame.png").default} alt="hola"/>
       <Link to={`/videogame`} >
         <button>INGRESAR</button>
       </Link>

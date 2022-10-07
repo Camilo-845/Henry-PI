@@ -1,0 +1,16 @@
+.main_container img{
+    width: 100%;
+}
+.main_container {
+    background-color: rgb(32,32,32);
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 45%;
+}
+.main_container div h2{
+    margin: auto;
+    color: white;
+}
