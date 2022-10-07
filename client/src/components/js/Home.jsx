@@ -21,13 +21,14 @@ export class Home extends Component {
         </div>
         <div className={styles.gamesContainer}>
           {this.props.videogames?.map(videogame=>{return(
-            <div key={videogame.id}>
+            <div className={styles.videogameContainer} key={videogame.id}>
               <VideoGame
-              id= {videogame.id}
-              name= {videogame.name}
-              genres= {videogame.genres}
-              rating={videogame.rating}
-              background_image= {videogame.background_image}
+                key={videogame.id}
+                id= {videogame.id}
+                name= {videogame.name}
+                genres= {videogame.genres}
+                rating={videogame.rating}
+                background_image= {videogame.background_image}
               ></VideoGame>
             </div>
         )})}

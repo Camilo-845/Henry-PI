@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import{Welcome,Home,Videogame,VideogameCreate,NotFound,Nav} from "./components";
+import{Welcome,Home,VideogameDetail,VideogameCreate,NotFound,Nav} from "./components";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
           <Route exact path='/' component={Welcome}/>
           <Route exact path='/videogame' component={Home}/>
           <Route path='/videogame/create' component={VideogameCreate}/>
-          <Route path='/videogame/:id' component={Videogame}/>
+          <Route path='/videogame/:id' component={VideogameDetail}/>
           <Route path='*' component={NotFound}/>
         </Switch>
       </Router>
