@@ -29,6 +29,7 @@ export class Home extends Component {
                 genres= {videogame.genres}
                 rating={videogame.rating}
                 background_image= {videogame.background_image}
+                belongs_db={videogame.belongs_db}
               ></VideoGame>
             </div>
         )})}

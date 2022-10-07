@@ -1,0 +1,11 @@
+.mainContainer{
+    background-color: rgb(55,55,55);
+    width: max-content;
+    padding: 0px 10px;
+    border-radius: 10px;
+    align-items: center;
+    margin: 5px 5px;
+}
+.mainContainer h4{
+    margin:0px
+}
