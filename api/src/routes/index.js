@@ -18,7 +18,7 @@ router.get('/videogames',async(req,res)=>{
         const where= {};
         var search= "";
         var pagesLimit=5;
-        var DbVideogames= await Videogame.findAll({where});
+        var DbVideogames= await Videogame.findAll({where,include:[Genre]});
         var ApiVideogames= [];
         if(name) {
             pagesLimit=1;
@@ -38,6 +38,12 @@ router.get('/videogames',async(req,res)=>{
                             released:data[e].released,
                             background_image:data[e].background_image,
                             rating:data[e].rating,
+                            genres:data[e].genres.map(element=>{
+                                return {
+                                    id:element.id,
+                                    name:element.name
+                                }
+                            })
                         })
                     }
                 ApiVideogames= ApiVideogames.concat(arr)
