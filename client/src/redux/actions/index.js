@@ -30,6 +30,7 @@ export const createVideogame = (Videogame) => {
     return function(dispatch){
         if(Videogame.background_image==="")delete Videogame.background_image
         if(Videogame.released==="")delete Videogame.released
+        if(Videogame.rating==="")delete Videogame.rating
         return fetch(`${BACKEND_URL}videogame`,{
           method:"POST",
           headers: {

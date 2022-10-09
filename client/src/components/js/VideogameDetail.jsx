@@ -32,9 +32,10 @@ const VideogameDetail = (props) => {
       </div>
       <div>
         {Videogame.platforms?.map((el) => {
-          return <PlatformCard key={el.platform.id}
-            id={el.platform.id}
-            name={el.platform.name}
+          console.log()
+          return <PlatformCard key={el.id}
+            id={el.id}
+            name={el.name}
           ></PlatformCard>
         })}
       </div>
