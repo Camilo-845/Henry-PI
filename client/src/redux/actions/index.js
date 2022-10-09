@@ -27,17 +27,29 @@ export const getVideogameById = (IdVideogame,belongsDb) => {
     }
 };
 export const createVideogame = (Videogame) => {
-    return {
-        type:CREATE_VIDEOGAME,
-        payload:{
+    return function(dispatch){
+        if(Videogame.background_image==="")delete Videogame.background_image
+        if(Videogame.released==="")delete Videogame.released
+        return fetch(`${BACKEND_URL}videogame`,{
+          method:"POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body:JSON.stringify({
             name:Videogame.name,
             description:Videogame.description,
             rating:Videogame.rating,
-            realised:Videogame.realised,
+            released:Videogame.released,
             background_image:Videogame.background_image,
             genres:Videogame.genres,
             platforms:Videogame.platforms,
-        }
+          }),
+        })
+        .then(response=>response.json())
+        .then(data=>{
+            dispatch({type:CREATE_VIDEOGAME,payload:data})
+        })
     }
 };
 export const getGenres = () => {

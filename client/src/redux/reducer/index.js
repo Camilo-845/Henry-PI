@@ -2,7 +2,7 @@ import {GET_GENRES,GET_PLATFORMS,GET_VIDEOGAMES,GET_VIDEOGAME_BY_ID,CREATE_VIDEO
 const initialState = {
   videogames: [],
   videogameDetail: [],
-  geners:[],
+  genres:[],
   platforms:[]
 };
 
@@ -26,7 +26,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_GENRES:
       return {
         ...state,
-        geners:action.payload
+        genres:action.payload
       }
     case GET_PLATFORMS:
       return {

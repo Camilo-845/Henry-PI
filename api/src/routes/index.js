@@ -43,7 +43,8 @@ router.get('/videogames',async(req,res)=>{
                                     id:element.id,
                                     name:element.name
                                 }
-                            })
+                            }),
+                            belongs_db:false,
                         })
                     }
                 ApiVideogames= ApiVideogames.concat(arr)
@@ -58,7 +59,7 @@ router.get('/videogames',async(req,res)=>{
         if(Object.keys(videogames).length === 0 ){
             res.status(204).send('No Games available')
         }else{
-            res.status(200).json(videogames)
+            res.status(200).json(videogames.slice(0,100))
         }
     }
     catch(err){
@@ -70,8 +71,8 @@ router.get("/videogame/:idVideogame",async(req,res)=>{
         const {idVideogame}= req.params;
         const {belongs_db}=req.query;
         var videogame = null
-        if(belongs_db){
-            videogame= await Videogame.findByPk(idVideogame)
+        if(belongs_db==="true"){
+            videogame= await Videogame.findByPk(idVideogame,{include:[Genre,Platform]})
         }else{
             videogame= await fetch(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`)
             .then(data=>data.json())
@@ -99,6 +100,7 @@ router.get("/videogame/:idVideogame",async(req,res)=>{
     }
 })
 router.post("/videogame",async(req,res)=>{
+    console.log(req.body)
     const {name,genres,platforms} = req.body;
     if(!name)res.status(404).send("falta parametro name")
     try{
