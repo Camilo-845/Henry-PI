@@ -1,0 +1,12 @@
+.mainContainer{
+    margin: 10px;
+}
+.mainContainer button{
+    margin-left: 5px;
+    padding: 2px 8px;
+    font-size: x-large;
+    background-color: rgb(117, 143, 165);
+    color: white;
+    border-color: transparent;
+    border-radius: 5px;
+}

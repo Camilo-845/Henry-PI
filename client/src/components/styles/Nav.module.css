@@ -1,0 +1,19 @@
+.nav{
+    background-color: rgb(3, 10, 11);
+    display: flex;
+    padding: 10px;
+    height: 60px;
+    align-items: center;
+    justify-content: center
+}
+.navLogo h1{
+    color: white;
+    width: auto;
+}
+.navLogo img{
+    margin: 10px;
+    width: 70px;
+}
+.navLogo{
+    display: flex;
+}
