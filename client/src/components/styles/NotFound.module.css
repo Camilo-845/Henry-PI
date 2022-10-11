@@ -1,0 +1,15 @@
+.notfound{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+.notfound h1{
+    color: white;
+}
+.notfound img{
+    color: white;
+    width: 300px;
+}

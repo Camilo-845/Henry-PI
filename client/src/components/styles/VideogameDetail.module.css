@@ -1,0 +1,21 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    background-color:rgb(21, 21, 21);
+    width: 80%;  
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-radius: 25px;
+}
+.mainContainer img{
+    border-top-left-radius:25px ;
+    border-top-right-radius:25px ;
+    width: 100%;
+}
+.infoContainer{
+    width: 80%;
+}
