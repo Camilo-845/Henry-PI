@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/Nav.module.css"
-import image from "../../scr_img/videogame-svgrepo-com.svg"
+import styles from "../../styles/Nav.module.css"
+import image from "../../../scr_img/videogame-svgrepo-com.svg"
 import { Link } from "react-router-dom";
 const Nav = () => {
   return (

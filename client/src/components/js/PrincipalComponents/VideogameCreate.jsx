@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as actions from '../../redux/actions';
-import styles from "../styles/VideogameCreate.module.css"
-import { Link,Redirect} from "react-router-dom"
-import GenreCard from "./GenreCard"
-import PlatformCard from "./PlatformCard"
+import * as actions from '../../../redux/actions';
+import styles from "../../styles/VideogameCreate.module.css"
+import { Link} from "react-router-dom"
+import GenreCard from "../secondaryComponents/GenreCard"
+import PlatformCard from "../secondaryComponents/PlatformCard"
 import Swal from 'sweetalert2'
 
 const VideogameCreate = () => {
@@ -31,6 +31,7 @@ const VideogameCreate = () => {
       errors.name ='Name no puede tener solo numeros'
       errors.globalError=true
     }
+    // eslint-disable-next-line
     if ((!(state.background_image.length===0))&&!(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(state.background_image))){
       errors.background_image = 'Image URL is not valid';
       errors.globalError=true

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/VideoGame.module.css"
+import styles from "../../styles/VideoGame.module.css"
 import { Link } from "react-router-dom";
 import GenreCard from "./GenreCard"
 
@@ -10,8 +10,12 @@ const VideoGame = (props) => {
     else{
     query_param = "?belongs_db=false"
   }
+  const HandleClick = (e) => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;   
+}
   return (
-    <Link style={{ textDecoration: 'none' }} to={`/videogame/${props.id}${query_param}`}>
+    <Link onClick={HandleClick} style={{ textDecoration: 'none' }} to={`/videogame/${props.id}${query_param}`}>
       <div className={styles.main_container}>
         <img src={props.background_image} alt="" />
         <div className={styles.infoContainer}>

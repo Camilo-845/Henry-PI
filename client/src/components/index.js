@@ -1,9 +1,9 @@
-import Home from "./js/Home";
-import VideogameDetail from "./js/VideogameDetail";
-import VideogameCreate from "./js/VideogameCreate";
-import Welcome from "./js/Welcome";
-import NotFound from "./js/NotFound";
-import Nav from "./js/Nav";
+import Home from "./js/PrincipalComponents/Home";
+import VideogameDetail from "./js/PrincipalComponents/VideogameDetail";
+import VideogameCreate from "./js/PrincipalComponents/VideogameCreate";
+import Welcome from "./js/PrincipalComponents/Welcome";
+import NotFound from "./js/PrincipalComponents/NotFound";
+import Nav from "./js/PrincipalComponents/Nav";
 export {Home} 
 export {VideogameDetail}
 export {VideogameCreate }

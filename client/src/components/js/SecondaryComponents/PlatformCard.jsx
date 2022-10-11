@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/PlatformCard.module.css"
+import styles from "../../styles/PlatformCard.module.css"
 
 const PlatformCard = (props) => {
   return (

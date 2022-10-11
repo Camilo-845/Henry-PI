@@ -18,13 +18,13 @@ router.get('/videogames',async(req,res)=>{
         const where= {};
         var search= "";
         var pagesLimit=5;
-        var DbVideogames= await Videogame.findAll({where,include:[Genre]});
-        var ApiVideogames= [];
         if(name) {
             pagesLimit=1;
             search =`&search=${name}`
             where.name= { [Op.iLike]:`%${name}%`};
         }
+        var DbVideogames= await Videogame.findAll({where,include:[Genre]});
+        var ApiVideogames= [];
         for (let i=1;i<=pagesLimit;i++){
             await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}${search}`)
             .then(data=>data.json())
@@ -84,7 +84,7 @@ router.get("/videogame/:idVideogame",async(req,res)=>{
                     background_image:data.background_image,
                     rating:data.rating,
                     description:data.description,
-                    platforms:data.platforms,
+                    platforms:data.platforms.map((el)=>el.platform),
                     genres:data.genres,
                 }
             })

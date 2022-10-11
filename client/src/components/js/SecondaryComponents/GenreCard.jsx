@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/GenreCard.module.css"
+import styles from "../../styles/GenreCard.module.css"
 
 const GenreCard = (props) => {
   return (

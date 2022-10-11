@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/NotFound.module.css";
-import image from "../../scr_img/browser-error-svgrepo-com.svg"
+import styles from "../../styles/NotFound.module.css";
+import image from "../../../scr_img/browser-error-svgrepo-com.svg"
 
 
 const Welcome = () => {
