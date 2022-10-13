@@ -1,21 +1,22 @@
-const { Videogame, conn } = require('../../src/db.js');
-const { expect } = require('chai');
+const { Videogame, conn } = require("../../src/db.js");
+const { expect } = require("chai");
 
-describe('Videogame model', () => {
-  before(() => conn.authenticate()
-    .catch((err) => {
-      console.error('Unable to connect to the database:', err);
-    }));
-  describe('Validators', () => {
+describe("Videogame model", () => {
+  before(() =>
+    conn.authenticate().catch((err) => {
+      console.error("Unable to connect to the database:", err);
+    })
+  );
+  describe("Validators", () => {
     beforeEach(() => Videogame.sync({ force: true }));
-    describe('name', () => {
-      it('should throw an error if name is null', (done) => {
-        Videogame.create({description:"hola hola"})
-          .then(() => console.log('hola prro')/* done(new Error('It requires a valid name') */)
+    describe("name", () => {
+      it("should throw an error if name is null", (done) => {
+        Videogame.create({ description: "hola" })
+          .then(() => done(new Error("It requires a valid name")))
           .catch(() => done());
       });
-      it('should work when its a valid name', () => {
-        Videogame.create({ name: 'Super Mario Bros' });
+      it("should work when its a valid name", () => {
+        Videogame.create({ name: "Super Mario Bros" });
       });
     });
   });

@@ -1,5 +1,7 @@
 body {
-  background: url(./scr_img/video-games-pattern.jpg) repeat;;
+  background: url(./scr_img/video-games-pattern.jpg) repeat;
+  background-position: 50% 0;
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

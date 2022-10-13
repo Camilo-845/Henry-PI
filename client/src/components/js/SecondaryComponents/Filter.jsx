@@ -27,7 +27,7 @@ const Filter = () => {
             videogamesArr=videogamesArr.filter(videogame=>{
                 let hasGenre=false;
                 videogame.genres.forEach(genre => {
-                    if(genre.id==state.genre)hasGenre=true
+                    if(genre.id.toString()===state.genre)hasGenre=true
                 });
                 return hasGenre
             })
@@ -50,6 +50,10 @@ const Filter = () => {
                     break;
                 case "Min-Rating":
                     type="rating";
+                    value=1;
+                    break;
+                default:
+                    type="name";
                     value=1;
                     break;
             }

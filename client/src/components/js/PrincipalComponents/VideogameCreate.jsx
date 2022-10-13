@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../../redux/actions';
 import styles from "../../styles/VideogameCreate.module.css"
 import { Link} from "react-router-dom"
-import GenreCard from "../secondaryComponents/GenreCard"
-import PlatformCard from "../secondaryComponents/PlatformCard"
+import GenreCard from "../SecondaryComponents/GenreCard"
+import PlatformCard from "../SecondaryComponents/PlatformCard"
 import Swal from 'sweetalert2'
 
 const VideogameCreate = () => {

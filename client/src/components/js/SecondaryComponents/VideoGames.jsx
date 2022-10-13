@@ -19,23 +19,23 @@ const VideoGames = () => {
     }
     paginar();
   }, [dispatch])
-
+  
   const pagedVideogames = useSelector(state => state.pagedVideogames)
   const currentPage = useSelector(state => state.currentPage)
   const IsLoading = useSelector(state=>state.isLoading)
-  if(IsLoading){
-    return(
-      <h1 className={styles.notFound}>Loading...</h1>
-    )
-  }
   return (
     <div className={styles.mainContainer}>
+      {(IsLoading)&&
+        <h1 className={styles.notFound}>Loading...</h1>
+      }
+      {(!IsLoading)&&
       <Pages></Pages>
+      }
       <div className={styles.videogamesContainer}>
-      {(pagedVideogames.length===0)&&
+      {(pagedVideogames.length===0&&!IsLoading)&&
         <h1 className={styles.notFound}>Videogames not found</h1>
       }
-      {pagedVideogames[currentPage]?.map(videogame => {
+      {!IsLoading&&pagedVideogames[currentPage]?.map(videogame => {
         return (
           <div className={styles.videogameContainer} key={videogame.id}>
             <VideoGame
@@ -51,7 +51,9 @@ const VideoGames = () => {
         )
       })}
       </div>
+      {(!IsLoading)&&
       <Pages></Pages>
+      }
     </div>
   );
 };

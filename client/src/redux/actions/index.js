@@ -37,7 +37,7 @@ export const pageVideogames=(videogames)=>{
 export const getVideogames = () => {
     return function(dispatch){
         return fetch(`${BACKEND_URL}videogames`)
-        .then((response)=>response.json())
+        .then((response)=>response.status===204?[]:response.json())
         .then(data=>{
             dispatch({type:GET_VIDEOGAMES,payload:data})
         })
@@ -46,7 +46,7 @@ export const getVideogames = () => {
 export const getVideogamesByName = (name) => {
     return function(dispatch){
         return fetch(`${BACKEND_URL}videogames?name=${name}`)
-        .then((response)=>response.json())
+        .then((response)=>response.status===204?[]:response.json())
         .then(data=>{
             dispatch({type:GET_VIDEOGAMES_BY_NAME,payload:data})
         })

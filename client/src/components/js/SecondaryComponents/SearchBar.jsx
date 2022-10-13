@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/SearchBar.module.css"
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as actions from '../../../redux/actions/index';
 import store from '../../../redux/store'
 

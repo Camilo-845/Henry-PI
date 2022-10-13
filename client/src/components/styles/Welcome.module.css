@@ -1,21 +1,32 @@
 .main_container{
-    height: 80%;
-    margin-top: 10px;
+    min-width: 450px;
+    width: 50%;
+    height: inherit;
+    margin: 10px auto;
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 3px solid black;
+    padding: 9px;
+    border-radius: 35px;
+    background-color: rgb(21,21,21);
+    height: 60%;
 }
 .main_container img{
-    height: 80%;
+    width: 80%;
+    max-height: 445px;
 }
 .main_container button{
+    padding: 5px;
+    width: 100%;
+    border: 3px solid black;
     border-radius: 10px;
-    border-color: white;
-    background-color: transparent;
+    background-color: #777E7E;
     color: white;
     font-size:xx-large;
+    margin-bottom: 20px;
 }
 .main_container button:hover{
     border-radius: 10px;
