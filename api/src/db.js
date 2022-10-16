@@ -11,7 +11,6 @@ const {
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 }); */
 
-console.log(PGDATABASE,PGHOST,PGHOST,"NAMEEESSS")
 const sequelize = new Sequelize(`postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}`, {
   dialectOptions: {
     ssl: {
