@@ -7,7 +7,7 @@
   width: 80%;
   border-radius: 10px;
   padding: 10px;
-  background-color: rgb(75, 75, 75);
+  background-color: rgb(32,32,32);
   align-items: center;
   border: 2px solid rgb(20, 20, 20);
 }
@@ -32,11 +32,19 @@
   margin-left: 10px;
   border-radius: 7px;
   font-size: large;
-  max-width: 140px;
+  max-width: 130px;
   cursor: pointer;
+  min-width: 130px;
 }
 .mainContainer img {
   width: 30px;
   height: 30px;
   filter: invert(100%);
+}
+
+@media (max-width: 600px) {
+  .mainContainer {
+    align-items: center;
+    justify-content: center;
+  }
 }

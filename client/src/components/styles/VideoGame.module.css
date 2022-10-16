@@ -3,12 +3,16 @@
     max-height: 300px;
 }
 .main_container {
+    position: relative;
     background-color: rgb(32,32,32);
     display: flex;
     border-radius: 20px;
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+.main_container:hover .ratingContainer{
+    display: flex;
 }
 .genresContainer{
     height: min-content;
@@ -28,4 +32,26 @@
 .infoContainer h2{
     text-align: center;
     margin: 10px 15px;
+}
+.ratingContainer{
+    background-color: rgb(32,32,32);
+    margin-right: auto;
+    padding: 10px;
+    display: none;
+    justify-self: flex-start;
+    position:absolute;
+    height: min-content;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    right: 0px;
+}
+.ratingContainer h4{
+    color: white;
+    margin: 0px;
+}
+.ratingContainer img{
+    margin: 0px;
+    width: 30px;
+    height:30px;
+    filter: invert(100%);
 }

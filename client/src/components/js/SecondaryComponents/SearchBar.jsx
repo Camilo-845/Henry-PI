@@ -28,7 +28,7 @@ const SearchBar= () =>{
     return (
         <div className={styles.mainContainer}>
             <input name="name" onChange={HandleChange} type="text" />
-            <button onClick={HandleSubmit}>BUSCAR</button>
+            <button onClick={HandleSubmit}>Search</button>
         </div>
       );
 }

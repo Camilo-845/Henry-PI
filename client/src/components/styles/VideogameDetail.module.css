@@ -11,6 +11,9 @@
     padding-bottom: 15px;
     border-radius: 25px;
 }
+.mainContainer h1{
+  margin: 6px 0px;
+}
 .mainContainer img{
     border-top-left-radius:25px ;
     border-top-right-radius:25px ;
@@ -18,4 +21,66 @@
 }
 .infoContainer{
     width: 80%;
+}
+
+.lds_ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds_ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds_ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds_ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds_ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds_ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .ratingContainer{
+    margin: 0;
+    background-color: rgb(32,32,32);
+    padding: 10px;
+    display: flex;
+    height: min-content;
+    align-items: center;
+    width: min-content;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.ratingContainer h4{
+    color: white;
+    margin: 0px;
+}
+.ratingContainer img{
+    margin: 0px;
+    width: 35px;
+    height:35px;
+    filter: invert(100%);
+}
+.Name_rating_container{
+  display: flex;
+
+  justify-content: space-between;
 }

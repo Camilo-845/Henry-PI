@@ -17,7 +17,11 @@ const VideoGame = (props) => {
   return (
     <Link onClick={HandleClick} style={{ textDecoration: 'none' }} to={`/videogame/${props.id}${query_param}`}>
       <div className={styles.main_container}>
-        <img src={props.background_image} alt="" />
+        <div className={styles.ratingContainer}>
+          <img src="https://cdn-icons-png.flaticon.com/128/1954/1954760.png" alt="start_image" />
+          <h4>{props.rating}</h4>
+        </div>
+        <img src={props.background_image} alt="background" />
         <div className={styles.infoContainer}>
           <h2>{props.name}</h2>
           <div className={styles.genresContainer}>

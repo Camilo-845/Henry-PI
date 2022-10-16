@@ -24,14 +24,19 @@ const VideogameDetail = (props) => {
   return (
     <div className={styles.mainContainer}>
       {(IsLoading) &&
-        <h1>Loading...</h1>
+        <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div>
       }
       {(!IsLoading) &&
         <>
           <img src={Videogame.background_image} alt={Videogame.name} />
           <div className={styles.infoContainer}>
-            <h1>{Videogame.name}</h1>
-            <h3>{Videogame.rating}</h3>
+            <div className={styles.Name_rating_container}>
+              <h1>{Videogame.name}</h1>
+              <div className={styles.ratingContainer}>
+                <img src="https://cdn-icons-png.flaticon.com/128/1954/1954760.png" alt="start_image" />
+                <h4>{Videogame.rating}</h4>
+              </div>
+            </div>
             <div>
               {Videogame.genres?.map((el) => {
                 return <GenreCard

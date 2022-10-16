@@ -26,7 +26,7 @@ const VideoGames = () => {
   return (
     <div className={styles.mainContainer}>
       {(IsLoading&&pagedVideogames.length===0)&&
-        <h1 className={styles.notFound}>Loading...</h1>
+        <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div>
       }
       {(!IsLoading)&&
         <Pages></Pages>
