@@ -20,8 +20,8 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 require('dotenv').config();
-const {PORT} = process.env;
-console.log("puerto",PORT)
+const {PORT,PGUSER,PGPASSWORD,PGHOST,PGPORT,PGDATABASE} = process.env;
+console.log("puerto",PORT,PGUSER,PGPASSWORD,PGHOST,PGPORT,PGDATABASE)
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
