@@ -25,17 +25,17 @@ const VideoGames = () => {
   const IsLoading = useSelector(state=>state.isLoading)
   return (
     <div className={styles.mainContainer}>
-      {(IsLoading)&&
+      {(IsLoading&&pagedVideogames.length===0)&&
         <h1 className={styles.notFound}>Loading...</h1>
       }
       {(!IsLoading)&&
-      <Pages></Pages>
+        <Pages></Pages>
       }
       <div className={styles.videogamesContainer}>
       {(pagedVideogames.length===0&&!IsLoading)&&
         <h1 className={styles.notFound}>Videogames not found</h1>
       }
-      {!IsLoading&&pagedVideogames[currentPage]?.map(videogame => {
+      {pagedVideogames[currentPage]?.map(videogame => {
         return (
           <div className={styles.videogameContainer} key={videogame.id}>
             <VideoGame

@@ -9,6 +9,11 @@
     background-color: rgb(28,28,33);
     border-radius: 15px;
 }
+@media (max-width: 600px) {
+    .mainContainer{
+      width: 90%;
+    }
+  }
 .mainContainer form{
     font-weight: 800;
     font-size: larger;

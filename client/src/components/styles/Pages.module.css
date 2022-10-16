@@ -1,7 +1,7 @@
 .mainContainer{
     margin: 10px;
 }
-.mainContainer button{
+.pageButton{
     margin-left: 5px;
     padding: 2px 8px;
     font-size: x-large;
@@ -9,4 +9,51 @@
     color: white;
     border-color: transparent;
     border-radius: 5px;
+    transition: transform .2s;
+}
+.pageButton:hover{
+    transform: scale(1.2);
+    cursor:pointer;
+    border-color: #00CE6A;
+    color: #00CE6A;
+}
+.blockButtonRight{
+    font-size: xx-large; /* Cambiar el tamaño de la tipografia */
+    font-weight: 500; /* Fuente en negrita o bold */
+    color: #ffffff; /* Color del texto */
+    border-radius: 25px; /* Borde del boton */
+    background-color: #312e2e;
+    height: min-content;
+    text-align: center;
+    padding: 10px 20px; /* Relleno del boton */
+    position: fixed;
+    bottom: 50%;
+    right: 5%;
+    transition: transform .2s;
+}
+.blockButtonRight:hover{
+    border-color: rgb(33, 32, 32);
+    cursor:pointer;
+    transform: scale(1.2);
+    background-color: #6b6767;
+    
+}
+.blockButtonLeft{
+    font-size: xx-large; /* Cambiar el tamaño de la tipografia */
+    font-weight: 500; /* Fuente en negrita o bold */
+    color: #ffffff; /* Color del texto */
+    border-radius: 25px; /* Borde del boton */
+    background-color: #312e2e;
+    padding: 10px 20px; /* Relleno del boton */
+    position: fixed;
+    bottom: 50%;
+    left: 5%;
+    transition: transform .2s;
+}
+.blockButtonLeft:hover{
+    border-color: rgb(33, 32, 32);
+    cursor:pointer;
+    transform: scale(1.2);
+    background-color: #6b6767;
+    
 }

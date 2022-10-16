@@ -1,53 +1,48 @@
 .createButton{
+    transition: transform .2s;
     height: 100%;
     font-size: x-large;
     border-radius: 5px;
     border-color: transparent;
     background-color: rgb(0,206,106);
     color: white;
+    cursor:pointer;
+}
+.createButton:hover{
+    color: rgb(48, 104, 77);
+    border-color: rgb(0,206,106);
+    transform: scale(1.2);
 }
 .contendor{
     margin: auto;
     margin-top: 5px;
     display: flex;
-    justify-content: center;
-    justify-items: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    align-content: space-between;
     width: 70%;
-    height: auto;
 }
+@media (max-width: 600px) {
+    .contendor{
+      width: 95%;
+    }
+  }
+
 .contendor h1{
     width: 250px;
-}
-.searchBar{
-    margin-top: 5px;
-    width: 70%;
-    border-radius: 12px;
-    border:solid 1px white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-}
-.searchBar button{
-    border-radius: 12px;
-    font-size: 25px;
-    border-color: white;
-    color: white;
-    background-color: transparent;
 }
 .gamesContainer{
     width: 90%;
 }
-.videogameContainer{
-    margin: 10px;
-    width: 400px;
-    align-items: center;
-}
+@media (max-width: 600px) {
+    .gamesContainer{
+      width: 90%;
+    }
+  }
+
 .SearchBar{
+    align-items: center;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }

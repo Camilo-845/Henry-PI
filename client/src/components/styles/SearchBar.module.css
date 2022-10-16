@@ -13,12 +13,29 @@
     border-radius: 10px;
     margin-right: 10px;
 }
-.mainContainer button{
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 3px solid rgb(25,25,25);
+@media (max-width: 600px) {
+    .mainContainer{
+      width: 80%;
+      margin-right: 0px;
+    }
+  }
+  .mainContainer button{
+      transition: transform .2s;
+      cursor:pointer;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 3px solid rgb(25,25,25);
     border-radius: 10px;
     background-color: rgb(45,54,62);
     color: white;
     font-size: x-large;
+}
+@media (max-width: 600px) {
+    .mainContainer button{
+      width: 50%;
+    }
+  }
+.mainContainer button:hover{
+    transform: scale(1.2);
+    background-color: rgb(66, 87, 103);
 }

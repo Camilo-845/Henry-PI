@@ -10,17 +10,23 @@ const Filter = () => {
         dispatch(actions.getGenres())
     }, [dispatch])
     const genres = useSelector(state => state.genres)
-
+    
     const [state, setState] = React.useState({
-        propiedad: "existentes",
+        created: false,
         genre: "",
         sort: ""
     })
-
+    
     const videogames= useSelector(state=>state.videogames)
-    const HandleBlur=(e)=>{
+    const HandleSelectorChange = (e) => {
+        setState({
+            ...state,
+            [e.target.name]:e.target.name==="created"?e.target.checked:e.target.value
+        })
+    }
+    React.useEffect(()=>{
         var videogamesArr=[...videogames]
-        if(state.propiedad==="creados"){
+        if(state.created){
             videogamesArr=videogamesArr.filter(el=>el.belongs_db===true)
         };
         if(state.genre!==""){
@@ -68,32 +74,24 @@ const Filter = () => {
             })
         }
         dispatch(actions.pageVideogames(videogamesArr))
-    }
-    const HandleSelectorChange = (e) => {
-                setState({
-                    ...state,
-                    [e.target.name]: e.target.value,
-                })
-    }
+        // eslint-disable-next-line
+    },[state])
 
+    
     return (
         <div className={styles.mainContainer}>
+            <img src="https://cdn-icons-png.flaticon.com/128/2769/2769156.png" alt="filterImg" />
             <div>
-            <label >By property: </label>
-            <select 
-            onBlur={HandleBlur}
-            name="propiedad"
-            onChange={HandleSelectorChange}
-            id="genres"
-            >
-                <option value="existentes">Existentes</option>
-                <option value="creados">Creados</option>
-            </select>
+            <label >Created: </label>
+            < input 
+            className={styles.inputCheckBox}
+            name="created"
+            onChange={HandleSelectorChange} 
+            type="checkbox" />
             </div>
             <div>
-            <label >By Genre: </label>
+            <label >Genre: </label>
             <select
-                onBlur={HandleBlur}
                 name="genre"
                 onChange={HandleSelectorChange}
                 id="genres">
@@ -107,7 +105,6 @@ const Filter = () => {
             <div>
             <label >Sort: </label>
             <select
-                onBlur={HandleBlur}
                 name="sort"
                 onChange={HandleSelectorChange}
                 id="genres">
