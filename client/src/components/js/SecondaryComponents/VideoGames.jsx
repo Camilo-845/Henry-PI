@@ -28,7 +28,7 @@ const VideoGames = () => {
       {(IsLoading&&pagedVideogames.length===0)&&
         <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div>
       }
-      {(!IsLoading)&&
+      {(!IsLoading||pagedVideogames[currentPage])&&
         <Pages></Pages>
       }
       <div className={styles.videogamesContainer}>
