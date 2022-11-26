@@ -25,7 +25,7 @@ router.get('/videogames',async(req,res)=>{
         }
         var DbVideogames= await Videogame.findAll({where,include:[Genre]});
         var ApiVideogames= [];
-        for (let i=1;i<=pagesLimit;i++){
+        for (let i=Math.floor( Math.random() * 10);i<=pagesLimit;i++){
             await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}${search}`)
             .then(data=>data.json())
             .then(data=>data['results'])
