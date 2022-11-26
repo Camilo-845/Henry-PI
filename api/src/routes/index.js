@@ -25,7 +25,7 @@ router.get('/videogames',async(req,res)=>{
         }
         var DbVideogames= await Videogame.findAll({where,include:[Genre]});
         var ApiVideogames= [];
-        const randomNumber=Math.floor(Math.random()*num)
+        const randomNumber=Math.floor(Math.random()*10)
         for (let i=randomNumber;i<=(randomNumber+pagesLimit);i++){
             await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}${search}`)
             .then(data=>data.json())
@@ -64,7 +64,7 @@ router.get('/videogames',async(req,res)=>{
         }
     }
     catch(err){
-        res.status(404).send(new Error(err))
+        res.status(404).send(new Error(err).message)
     }
 })
 router.get("/videogame/:idVideogame",async(req,res)=>{
