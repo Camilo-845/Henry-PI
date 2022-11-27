@@ -1,5 +1,5 @@
 /* import axios from "axios"; */
-export const BACKEND_URL="https://henry-videogames-api.onrender.com/"/* "https://henry-pi-api.up.railway.app/" */
+export const BACKEND_URL="http://localhost:3001/"/* "https://henry-videogames-api.onrender.com/" *//* "https://henry-pi-api.up.railway.app/" */
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const GET_VIDEOGAMES_BY_NAME = "GET_VIDEOGAMES_BY_NAME";
 export const GET_VIDEOGAME_BY_ID = "GET_VIDEOGAME_BY_ID";

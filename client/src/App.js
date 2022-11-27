@@ -6,13 +6,17 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Nav></Nav>
         <Switch>
           <Route exact path='/' component={Welcome}/>
+          <>
+          <Nav></Nav>
+          <Switch>
           <Route exact path='/videogame' component={Home}/>
           <Route path='/videogame/create' component={VideogameCreate}/>
           <Route path='/videogame/:id' component={VideogameDetail}/>
           <Route path='*' component={NotFound}/>
+          </Switch> 
+          </> 
         </Switch>
       </Router>
     </div>

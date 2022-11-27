@@ -17,7 +17,9 @@ const VideoGames = () => {
       await dispatch(actions.pageVideogames(videogam));
       dispatch(actions.setLoading(false))
     }
-    paginar();
+    if(store.getState().videogames.length ===0){
+      paginar();
+    }
   }, [dispatch])
   
   const pagedVideogames = useSelector(state => state.pagedVideogames)
