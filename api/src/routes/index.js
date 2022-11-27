@@ -53,9 +53,9 @@ router.get('/videogames',async(req,res)=>{
         }
         var videogames = [];
         if(name){
-                videogames=ApiVideogames.concat(DbVideogames).slice(0,30)
+                videogames=DbVideogames.concat(ApiVideogames).slice(0,30)
         }else{    
-                videogames=ApiVideogames.concat(DbVideogames)
+                videogames=DbVideogames.concat(ApiVideogames)
         }
         if(Object.keys(videogames).length === 0 ){
             res.status(204).send('No Games available')
