@@ -14,21 +14,25 @@ const Nav = () => {
   }
   return (
     <div className={styles.nav}>
-      <Link style={{ textDecoration: 'none' }}   to="/videogame">
-        <div onClick={()=>HandleChange("Home")} name="Home" className={styles.navLogo}>
-          <img src={image} alt="Icon" />
-          <h1 >VIDEOGAMES</h1>
-        </div>
-      </Link>
+      <div onClick={() => HandleChange("Home")} name="Home" className={styles.navLogo}>
+        <img src={image} alt="Icon" />
+        <h1 >VIDEOGAMES</h1>
+      </div>
       <div className={styles.routesContainer}>
-        <Link style={{ textDecoration: 'none' }} to="/videogame">
-          <h5 onClick={()=>HandleChange("Home")} name="Home"className={(state.currentRoute==="Home")?styles.currentRoute:styles.routes}>Home</h5>
+        <Link style={{ textDecoration: 'none'}} to="/videogame">
+          <div onClick={() => HandleChange("Home")}>
+            <h5 name="Home" className={(state.currentRoute === "Home") ? styles.currentRoute : styles.routes}>Home</h5>
+          </div>
         </Link>
-        <Link style={{ textDecoration: 'none' }}   to="/videogame/create">
-          <h5 onClick={()=>HandleChange("Create")} name="Create" className={(state.currentRoute==="Create")?styles.currentRoute:styles.routes}>Create</h5>
+        <Link style={{ textDecoration: 'none' }} to="/videogame/create">
+          <div onClick={() => HandleChange("Create")}>
+            <h5 name="Create" className={(state.currentRoute === "Create") ? styles.currentRoute : styles.routes}>Create</h5>
+          </div>
         </Link>
-        <Link style={{ textDecoration: 'none' }}   to="/about">
-          <h5 onClick={()=>HandleChange("About")} name="About" className={(state.currentRoute==="About")?styles.currentRoute:styles.routes}>About</h5>
+        <Link style={{ textDecoration: 'none' }} to="/about">
+          <div onClick={() => HandleChange("About")}>
+            <h5 name="About" className={(state.currentRoute === "About") ? styles.currentRoute : styles.routes}>About</h5>
+          </div>
         </Link>
       </div>
     </div>

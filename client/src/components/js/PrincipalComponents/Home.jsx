@@ -13,9 +13,6 @@ export class Home extends Component {
       <div className={styles.contendor}>
         <div className={styles.SearchBar}>
           <SearchBar></SearchBar>
-          <Link to={"videogame/create"}>
-            <button className={styles.createButton}>+</button>
-          </Link>
         </div>
         <Filter></Filter>
         <div className={styles.gamesContainer}>
