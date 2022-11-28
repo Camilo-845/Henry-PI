@@ -17,7 +17,9 @@ const VideoGames = () => {
       await dispatch(actions.pageVideogames(videogam));
       dispatch(actions.setLoading(false))
     }
-    paginar();
+    if(store.getState().videogames.length ===0){
+      paginar();
+    }
   }, [dispatch])
   
   const pagedVideogames = useSelector(state => state.pagedVideogames)
@@ -25,17 +27,17 @@ const VideoGames = () => {
   const IsLoading = useSelector(state=>state.isLoading)
   return (
     <div className={styles.mainContainer}>
-      {(IsLoading&&pagedVideogames.length===0)&&
+      {(IsLoading)&&
         <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div>
       }
-      {(!IsLoading||pagedVideogames[currentPage])&&
+      {(!IsLoading)&&
         <Pages></Pages>
       }
       <div className={styles.videogamesContainer}>
       {(pagedVideogames.length===0&&!IsLoading)&&
         <h1 className={styles.notFound}>Videogames not found</h1>
       }
-      {pagedVideogames[currentPage]?.map(videogame => {
+      {(pagedVideogames[currentPage]&&!IsLoading)?pagedVideogames[currentPage].map(videogame => {
         return (
           <div className={styles.videogameContainer} key={videogame.id}>
             <VideoGame
@@ -49,7 +51,7 @@ const VideoGames = () => {
               ></VideoGame>
           </div>
         )
-      })}
+      }):<></>}
       </div>
       {(!IsLoading)&&
       <Pages></Pages>

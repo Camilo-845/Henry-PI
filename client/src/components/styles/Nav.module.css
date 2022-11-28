@@ -1,12 +1,14 @@
 .nav{
     background-color: rgb(3, 10, 11);
     display: flex;
+    flex-direction: column;
     padding: 10px;
-    height: 60px;
+    height: 6rem;
     align-items: center;
-    justify-content: center
+    justify-content: flex-end
 }
 .navLogo h1{
+    margin: 5px;
     color: white;
     width: auto;
 }
@@ -16,4 +18,23 @@
 }
 .navLogo{
     display: flex;
+    align-items: center;
+}
+.routesContainer{
+    display: flex;
+}
+.routes{
+    font-size: large;
+    margin: 3px 10px;
+    display: flex;
+    color: gray;
+}
+.currentRoute{
+    font-size: large;
+    margin: 3px 10px;
+    display: flex;
+    color: white;
+}
+.routes:hover{
+    color:white;
 }

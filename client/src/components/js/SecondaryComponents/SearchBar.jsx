@@ -16,6 +16,10 @@ const SearchBar= () =>{
         })
     }
     const HandleSubmit=(e)=>{
+        setState({
+            ...state,
+            name:""
+        })
         async function SearchAndPage(){
             dispatch(actions.setLoading(true))
             await dispatch(actions.getVideogamesByName(state.name))
@@ -27,7 +31,7 @@ const SearchBar= () =>{
     }
     return (
         <div className={styles.mainContainer}>
-            <input name="name" onChange={HandleChange} type="text" />
+            <input name="name" onChange={HandleChange} type="text" value={state.name}/>
             <button onClick={HandleSubmit}>Search</button>
         </div>
       );

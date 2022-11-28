@@ -1,0 +1,91 @@
+.mainContainer{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    padding: 20px 40px;
+    background-color: #151515;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 20px;
+}
+.header{
+    border-bottom: 1px solid white;
+    width: 40%;
+}
+.body{
+    margin: 5px 0px;
+    padding: 10px;
+    background-color: #282727;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.mainContainer h1{
+    margin: 5px;
+    color: white;
+}
+.mainContainer h3{
+    margin: 5px;
+    color: rgb(215, 211, 211);
+}
+.body ul{
+    color: rgb(215, 211, 211);
+    font-size: large;
+    font-weight: 500;
+}
+.body h4{
+    color: rgb(183, 183, 183);
+    margin: 0px 5px;
+    font-size: small;
+}
+.body p{
+    color: wheat;
+    margin: 5px;
+}
+.bodyAndImgameContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.bodyAndImgameContainer img{
+    width: 150px;
+    height: 150px;
+    margin: auto 20px;
+    border-radius: 20px;
+}
+.bodyAndImgameContainer div{
+    width: 70%;
+}
+.socialNet{
+    display: flex;
+    margin-left: 20px;
+}
+.socialNet img{
+    width: 60px;
+    margin: 10px;
+}
+
+.contact div:first-child{
+    margin: 10px;
+    display: flex;
+    border:2px solid #5f5f5f;
+    padding:5px;
+    border-radius: 20px;
+    background-color: #1f1f1f;
+    align-items: center;
+    transition: all ease 0.2s;
+}
+.contact div:first-child:hover{
+    box-shadow: 0px 0px 10px 2px rgba(125, 255, 255, 0.7);
+}
+.contact div:first-child img{
+    height:30px;
+    margin-left: 10px;
+    transition: transform .2s;
+}
+.contact div:first-child img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

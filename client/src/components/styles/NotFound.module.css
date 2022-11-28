@@ -1,15 +1,20 @@
 .notfound{
-    width: auto;
+    width: 80%;
+    margin: 0px auto;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
+    padding: 20px;
+    background-color: #151515;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 .notfound h1{
     color: white;
 }
 .notfound img{
-    color: white;
+    filter: invert();
     width: 300px;
 }
