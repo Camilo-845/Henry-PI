@@ -25,32 +25,36 @@ router.get('/videogames',async(req,res)=>{
         }
         var DbVideogames= await Videogame.findAll({where,include:[Genre]});
         var ApiVideogames= [];
+        var AsyncVideogmes=[];
         const randomNumber=Math.floor(Math.random()*10)
-        for (let i=randomNumber;i<=(randomNumber+pagesLimit);i++){
-            await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}${search}`)
-            .then(data=>data.json())
-            .then(data=>data['results'])
-            .then(data=>{
-                let arr = [];
-                    for(let e in data){
-                        arr.push({
-                            id:data[e].id,
-                            name:data[e].name,
-                            released:data[e].released,
-                            background_image:data[e].background_image,
-                            rating:data[e].rating,
-                            genres:data[e].genres.map(element=>{
-                                return {
-                                    id:element.id,
-                                    name:element.name
-                                }
-                            }),
-                            belongs_db:false,
-                        })
-                    }
-                ApiVideogames= ApiVideogames.concat(arr)
-            })
+        for (let i=randomNumber;i<=(randomNumber+pagesLimit);i++){ 
+            AsyncVideogmes.push(fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}${search}`)
+                .then(data=>data.json())
+                .then(data=>data['results'])
+                .then(data=>{
+                    let arr = [];
+                        for(let e in data){
+                            arr.push({
+                                id:data[e].id,
+                                name:data[e].name,
+                                released:data[e].released,
+                                background_image:data[e].background_image,
+                                rating:data[e].rating,
+                                genres:data[e].genres.map(element=>{
+                                    return {
+                                        id:element.id,
+                                        name:element.name
+                                    }
+                                }),
+                                belongs_db:false,
+                            })
+                        }
+                    console.log("Ya termine: ",i)
+                    ApiVideogames= ApiVideogames.concat(arr)
+                })
+            )
         }
+        await Promise.all(AsyncVideogmes)
         var videogames = [];
         if(name){
                 videogames=DbVideogames.concat(ApiVideogames).slice(0,30)
