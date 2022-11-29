@@ -49,7 +49,6 @@ router.get('/videogames',async(req,res)=>{
                                 belongs_db:false,
                             })
                         }
-                    console.log("Ya termine: ",i)
                     ApiVideogames= ApiVideogames.concat(arr)
                 })
             )
